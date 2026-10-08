@@ -37,6 +37,9 @@ class LoginPageLocators:
     AGREEMENTS_LINK = (By.ID, 'nav-policies')
     RECOMENDATIONS_MORE_LINK = (By.ID, 'footer-recommendations-link')
     ERROR_TEXT = (By.ID, 'login-error')
+    RESTORE_LINK = (By.ID, 'lockout-recover-btn')
+    GO_BACK_BUTTON = (By.ID, 'lockout-cancel-btn')
+    LOCKOUT_REGISTER_BTN = (By.ID, 'lockout-register-btn')
 
 
 class LoginPageHelper(BasePage):
@@ -45,6 +48,8 @@ class LoginPageHelper(BasePage):
         self.check_page()
 
     def check_page(self):
+        with allure.step('Проверяем корректность загрузки страницы'):
+            self.attach_screenshot()
         self.find_element(LoginPageLocators.LOGIN_TAB)
         self.find_element(LoginPageLocators.LOGIN_FIELD)
         self.find_element(LoginPageLocators.LOGIN_BUTTON)
@@ -90,6 +95,17 @@ class LoginPageHelper(BasePage):
 
     @allure.step('Вводим логин')
     def enter_login(self, login):
-        self.attach_screenshot()
         self.find_element(LoginPageLocators.LOGIN_FIELD).send_keys(login)
+        self.attach_screenshot()
+
+    @allure.step('Вводим пароль')
+    def enter_password(self, password):
+        self.find_element(LoginPageLocators.PASSWORD_FIELD).send_keys(password)
+        self.attach_screenshot()
+
+    @allure.step('Переходим к восстановлению')
+    def click_recovery(self):
+        self.attach_screenshot()
+        self.find_element(LoginPageLocators.RESTORE_LINK).click()
+
 
