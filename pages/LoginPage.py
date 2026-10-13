@@ -108,4 +108,12 @@ class LoginPageHelper(BasePage):
         self.attach_screenshot()
         self.find_element(LoginPageLocators.RESTORE_LINK).click()
 
+    @allure.step('Переходим к странице восстановления учетной записи')
+    def click_forgot_password(self):
+        self.attach_screenshot()
+        self.find_element(LoginPageLocators.FORGOT_PASSWORD_LINK).click()
+
+
+
+
 

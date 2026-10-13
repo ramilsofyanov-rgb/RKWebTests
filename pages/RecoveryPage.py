@@ -20,3 +20,8 @@ class RecoveryPageHelper(BasePage):
         self.find_element(RecoveryPageLocators.EMAIL_BUTTON)
         self.find_element(RecoveryPageLocators.QRCODE)
         self.find_element(RecoveryPageLocators.SUPPORT_BUTTON)
+
+    @allure.step('Переходим к восстановлению по телефону')
+    def click_recovery_phone(self):
+        self.attach_screenshot()
+        self.find_element(RecoveryPageLocators.PHONE_BUTTON).click()
