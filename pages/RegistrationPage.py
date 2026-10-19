@@ -2,7 +2,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 import allure
 
-from pages.BasePage import BasePage
+from pages.BasePage import BasePageHelper
 
 class RegistrationPageLocators:
     INPUT_NAME = (By.ID, 'display-name')
@@ -15,7 +15,7 @@ class RegistrationPageLocators:
     REGISTER_PHONE_BUTTON = (By.ID, 'register-phone-toggle')
     LOGIN_LINK = (By.ID, 'login-link-anchor')
 
-class RegistrationPageHelper(BasePage):
+class RegistrationPageHelperHelper(BasePageHelper):
     def __init__(self, driver):
         self.driver = driver
         self.check_page()

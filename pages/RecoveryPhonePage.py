@@ -1,6 +1,6 @@
 import allure
 import random
-from pages.BasePage import BasePage
+from pages.BasePage import BasePageHelper
 from selenium.webdriver.common.by import By
 
 class RecoveryPhonePageLocators:
@@ -9,7 +9,7 @@ class RecoveryPhonePageLocators:
     COUNTRY_ITEM = (By.XPATH, '//*[@class="custom-select-option-code"]')
     GET_CODE_BUTTON = (By.ID, 'phone-submit-btn')
 
-class RecoveryPhonePageHelper(BasePage):
+class RecoveryPhonePageHelperHelper(BasePageHelper):
     def __init__(self, driver):
         self.driver = driver
         self.check_page()
