@@ -8,7 +8,7 @@ class RecoveryPageLocators:
     QRCODE = (By.ID, 'qr-image')
     SUPPORT_BUTTON = (By.ID, 'support-contact-btn')
 
-class RecoveryPageHelperHelper(BasePageHelper):
+class RecoveryPageHelper(BasePageHelper):
     def __init__(self, driver):
         self.driver = driver
         self.check_page()

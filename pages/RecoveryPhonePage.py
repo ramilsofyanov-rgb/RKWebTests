@@ -9,7 +9,7 @@ class RecoveryPhonePageLocators:
     COUNTRY_ITEM = (By.XPATH, '//*[@class="custom-select-option-code"]')
     GET_CODE_BUTTON = (By.ID, 'phone-submit-btn')
 
-class RecoveryPhonePageHelperHelper(BasePageHelper):
+class RecoveryPhonePageHelper(BasePageHelper):
     def __init__(self, driver):
         self.driver = driver
         self.check_page()
