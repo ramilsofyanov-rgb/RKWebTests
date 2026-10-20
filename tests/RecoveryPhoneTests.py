@@ -1,7 +1,7 @@
 import allure
 
 from core.BaseTest import browser
-from pages.BasePage import BasePage
+from pages.BasePage import BasePageHelper
 from pages.LoginPage import LoginPageHelper
 from pages.RecoveryPage import RecoveryPageHelper
 from pages.RecoveryPhonePage import RecoveryPhonePageHelper
@@ -11,7 +11,7 @@ BASE_URL = 'https://sn.rv-school.ru/'
 @allure.suite('Проверка восстановления пользователя')
 @allure.title('Проверка корректности кода страны при выборе случайной страны')
 def test_recovery_phone_ramdom_country(browser):
-    BasePage(browser).get_url(BASE_URL)
+    BasePageHelper(browser).get_url(BASE_URL)
     LoginPage = LoginPageHelper(browser)
     LoginPage.click_forgot_password()
     RecoveryPage = RecoveryPageHelper(browser)
